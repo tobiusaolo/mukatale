@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="loading gr__pixinvent_com" data-textdirection="ltr" lang="en"><!-- BEGIN: Head--><head>
+    <style>
+
+
+body{font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif; font-size:14px;}
+            .stepwizard-step p {
+                margin-top:20px;
+            }
+            .stepwizard-row {
+                display: table-row;
+            }
+            .stepwizard {
+                display: table;
+                width:100%;
+                position: relative;
+            }
+            .stepwizard-step button[disabled] {
+                opacity: 1 !important;
+                filter: alpha(opacity=100) !important;
+            }
+            .stepwizard-row:before {
+                top: 14px;
+                bottom: 0;
+                position: absolute;
+                content: " ";
+                width: 100%;
+                height: 1px;
+                background-color: #cccccc;
+                z-order: 0;
+            }
+            
+            .stepwizard-step {
+                display: table-cell;
+                text-align: center;
+                position: relative;
+            }
+
+            .btn-circle{
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                padding: 6px 0;
+                font-size: 12px;
+                line-height: 1.428571429;
+                border-radius: 15px;
+                }
+
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="ThemeSelect">
+    <title>MUKATALE</title>
+
+    <link href="{{url_for('static',filename='index/icon.css')}}" rel="stylesheet">
+    <!-- BEGIN: VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/vendors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/chartist.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/chartist-plugin-tooltip.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/flag-icon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/jquery.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/materialize.css')}}"
+          media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/dashboard-modern.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/intro.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/dropify.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/data-tables.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/select.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/custom.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/app-contacts.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/app-sidebar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/quill.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/materialize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/perfect-scrollbar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/plugin.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/prism.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='index/select2.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static',filename='index/select2-materialize.css')}}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/app-todo.css')}}">
+    <script defer src="{{url_for('static',filename='script.js')}}"></script>
+</head>
+  <!-- END: Head-->
+  <body >
+   <!-- BEGIN: Header-->
+    <header class="page-topbar" id="header">
+      <div class="navbar navbar-fixed">
+        <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-blue-grey-blue no-shadow">
+          <div class="nav-wrapper">
+            <div class="header-search-wrapper hide-on-med-and-down">
+                 
+               <h3 class="h3" style="padding:5px;margin-top:2px;color:white; text-align:center">MUKATALE APP ADMIN</h3>
+            </div>
+           
+
+            <ul class="navbar-list right">
+                <li></li>
+
+              <li>
+                  <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown">
+                  <span >
+                  <i class="material-icons">keyboard_tab</i></span></a>
+                  <ul class="dropdown-content" id="profile-dropdown" tabindex="0">
+              <li tabindex="0"><a class="grey-text text-darken-1" href=""><i class="material-icons">person_outline</i>Profile</a></li>
+{#              <li tabindex="0"><a class="grey-text text-darken-1" href=""><i class="material-icons">chat_bubble_outline</i></a></li>#}
+{#              <li tabindex="0"><a class="grey-text text-darken-1" href=""><i class="material-icons">help_outline</i> Help</a></li>#}
+              <li class="divider" tabindex="0"></li>
+             
+            </ul></li>
+            </ul>
+
+            
+          </div>
+          <nav class="display-none search-sm" style="display: none;">
+            <div class="nav-wrapper">
+            
+              <form>
+                <div class="input-field search-input-sm">
+                  <input class="search-box-sm mb-0" type="search" required="" id="search" data-search="template-list">
+                  <label class="label-icon" for="search">
+                      <i class="material-icons search-sm-icon">search</i></label><i class="material-icons search-sm-close">close</i>
+                  <ul class="search-list collection search-list-sm display-none ps">
+                      <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;">
+
+                      </div>
+                      </div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;">
+                        
+                  </div>
+                  </div>
+                  </ul>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </nav>
+      </div>
+    </header>
+
+    <!-- BEGIN: SideNav-->
+    <aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-light sidenav-active-square full" style="background-color:blue;" id="slide-out">
+      <div class="brand-sidebar" >
+        <h1 class="logo-wrapper">
+                <div class="col s2">
+                    <img class="responsive-img" style="width:250px;height:80px; margin-left:16px;" src="{{url_for('static',filename='welcome_note.png')}}" alt="Logo">
+                  
+                </div>
+                
+        </h1>
+      </div>
+      
+      <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow ps ps--active-y" >
+        <li class="active bold open"><button style="width:250px; padding:16px; margin-left:16px;"><a  href="#" tabindex="0">
+            <i class="material-icons">dashboard</i>
+            <span class="menu-title" data-i18n="Dashboard">Home</span></a></button>
+        </li>
+          <li class="bold"><button style="width:250px; padding:16px; margin-left:16px;"><a class="waves-effect waves-cyan " href="#">
+            <i class="material-icons"> person_add</i>
+            <span class="menu-title" data-i18n="Chat">Customers</span></a></button>
+          </li>
+          <li class="bold "><button style="width:250px; padding:16px; margin-left:16px;"><a class="waves-effect waves-cyan " href="{{url_for('add_item')}}">
+            <i class="material-icons">device_hub</i>
+            <span class="menu-title" data-i18n="Chat">Add Items</span></a></button>
+          </li>
+            <li class="bold"><button style="width:250px; padding:16px; margin-left:16px;"><a class="waves-effect waves-cyan " href="{{url_for('list_view')}}">
+            <i class="material-icons">playlist_add_check</i>
+            <span class="menu-title" data-i18n="Chat">View Items</span></a></button>
+        </li>
+
+        
+      
+      </ul>
+    </aside>
+    <!-- END: SideNav-->
+
+    <!-- BEGIN: Page Main-->
+    {% block content %}
+
+      {% endblock %}
+    <!-- END: Page Main-->
+    <!-- Theme Customizer -->
+<!--/ Theme Customizer -->
+
+    <!-- BEGIN: Footer-->
+
+    <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-light-blue gradient-shadow navbar-border navbar-shadow">
+      <div class="footer-copyright">
+        <div class="container"><span>© 2020<a href="" target="_blank"></a></span>
+            </div>
+      </div>
+    </footer>
+    <!-- END: Footer-->
+    <!-- BEGIN VENDOR JS-->
+    <script src="{{url_for('static',filename='index/vendors.js')}}"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="{{url_for('static',filename='index/chart.js')}}"></script>
+    <script src="{{url_for('static',filename='index/chartist.js')}}"></script>
+    <script src="{{url_for('static',filename='index/chartist-plugin-tooltip.js')}}"></script>
+    <script src="{{url_for('static',filename='index/chartist-plugin-fill-donut.js')}}"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN THEME  JS-->
+    <script src="{{url_for('static',filename='index/plugins.js')}}"></script>
+    <script src="{{url_for('static',filename='index/app-contacts.js')}}"></script>
+    <script src="{{url_for('static',filename='index/search.js')}}"></script>
+    <script src="{{url_for('static',filename='index/custom-script.js')}}"></script>
+    <script src="{{url_for('static',filename='index/customizer.js')}}"></script>
+    <script src="{{url_for('static',filename='index/dropify.js')}}"></script>
+    <script src="{{url_for('static',filename='index/form-file-uploads.js')}}"></script>
+    <script src="{{url_for('static',filename='index/data-tables.js')}}"></script>
+    <script src="{{url_for('static',filename='index/dataTables.js')}}"></script>
+    <script src="{{url_for('static',filename='index/dataTables_002.js')}}"></script>
+    <!-- END THEME  JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="{{url_for('static',filename='index/dashboard-modern.js')}}"></script>
+    <script src="{{url_for('static',filename='index/intro.js')}}"></script>
+    <script src="{{url_for('static',filename='index/jquery.js')}}"></script>
+    <script src="{{url_for('static',filename='index/jquery-sortable-min.js')}}"></script>
+    <script src="{{url_for('static',filename='index/quill.js')}}"></script>
+    <script src="{{url_for('static',filename='index/select2.js')}}"></script>
+   <script src="{{url_for('static',filename='index/app-todo.js')}}"></script>
+   <script src="{{url_for('static',filename='index/additional-methods.js')}}"></script>
+   <script src="{{url_for('static',filename='index/andular.js')}}"></script>
+   <script src="{{url_for('static',filename='index/custom-script.js')}}"></script>
+   <script src="{{url_for('static',filename='index/perfect-scrollbar.js')}}"></script>
+   <script src="{{url_for('static',filename='index/plugin.js')}}"></script>
+   <script src="{{url_for('static',filename='index/prism.js')}}"></script>
+    <!-- END PAGE LEVEL JS-->
+<script>
+                 $(document).ready(function () {
+  var navListItems = $('div.setup-panel div a'),
+          allWells = $('.setup-content'),
+          allNextBtn = $('.nextBtn'),
+  		  allPrevBtn = $('.prevBtn');
+
+  allWells.hide();
+
+  navListItems.click(function (e) {
+      e.preventDefault();
+      var $target = $($(this).attr('href')),
+              $item = $(this);
+
+      if (!$item.hasClass('disabled')) {
+          navListItems.removeClass('btn-primary').addClass('btn-default');
+          $item.addClass('btn-primary');
+          allWells.hide();
+          $target.show();
+          $target.find('input:eq(0)').focus();
+      }
+  });
+$(document).ready(function() {
+    $('#example').DataTable( {
+        columnDefs: [
+            {
+                targets: [ 0, 1, 2 ],
+                className: 'mdl-data-table__cell--non-numeric'
+            }
+        ]
+    } );
+} );
+  allPrevBtn.click(function(){
+      var curStep = $(this).closest(".setup-content"),
+          curStepBtn = curStep.attr("id"),
+          prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+
+          prevStepWizard.removeAttr('disabled').trigger('click');
+  });
+
+  allNextBtn.click(function(){
+      var curStep = $(this).closest(".setup-content"),
+          curStepBtn = curStep.attr("id"),
+          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+          curInputs = curStep.find("input[type='text'],input[type='url']"),
+          isValid = true;
+
+      $(".form-group").removeClass("has-error");
+      for(var i=0; i<curInputs.length; i++){
+          if (!curInputs[i].validity.valid){
+              isValid = false;
+              $(curInputs[i]).closest(".form-group").addClass("has-error");
+          }
+      }
+
+      if (isValid)
+          nextStepWizard.removeAttr('disabled').trigger('click');
+  });
+
+  $('div.setup-panel div a.btn-primary').trigger('click');
+});
+                 var currYear = (new Date()).getFullYear();
+
+$(document).ready(function() {
+  $(".datepicker").datepicker({
+    defaultDate: new Date(currYear-5,1,31),
+    // setDefaultDate: new Date(2000,01,31),
+    maxDate: new Date(currYear-5,12,31),
+    yearRange: [1928, currYear-5],
+    format: "yyyy/mm/dd"
+  });
+});
+ $( document ).ready(function() {
+
+    });
+
+</script>
+<!--  -->
+</body>
+</html>

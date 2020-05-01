@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Admin {% endblock title%}
+{% block content %}
+<div id="main">
+      <div class="row">
+        <div class="content-wrapper-before gradient-45deg-indigo-light-blue"></div>
+        <div class="col s12">
+          <div class="container white z-depth-2">
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div  class="card-panel" >
+                            <div class="card-content">
+                                <div class="card-title">
+                                    <div class="row">
+                                        <div class="col s12 m6 l10">
+                                            <h4 class="card-title">Enter New Product</h4>
+                                        </div>
+                                        <div class="col s12 m6 l2">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="error"></div>
+                                <div id="html-view-validations">
+                                    <form class="formValidate0 right-alert" id="formValidate0" method="POST" action="{{url_for('add_product')}}" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix active">person_add</i>
+                                                <input id="first_input2" type="text" class="validate"  required="required" aria-required="true" name="title">
+                                                <label for="first_input2">Title</label>
+                                                 <span class="helper-text right-alert" data-error="wrong company name" data-success="success continue"></span>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <div class="file-field input-field">
+                                                    <div class="btn btn-light-blue">
+                                                        <span>Upload Image</span>
+                                                        <input type="file" name="image" accept="image/*" id="c_logo" placeholder="Item image*">
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                        <input class="file-path validate" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix active">email</i>
+                                                <input class="validate" required="required"  aria-required="true" id="c_email" type="text" name="price">
+                                                <label for="c_email" >Price</label>
+                                            
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">place</i>
+                                                <input class="validate" required="required"  aria-required="true" id="c_address" type="text" name="description">
+                                                <label for="c_address">Description</label>
+                                                
+                                            </div>
+                                            
+                                            
+                                        
+                                            
+                                            <div class="input-field col s12">
+                                                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                                                    <i class="material-icons right">send</i>
+                                                </button>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <div class="contact-overlay"></div>
+                                                <div style="bottom: 54px; right: 19px;" class="fixed-action-btn direction-top active">
+                                                    <a class="btn-floating btn-large primary-text gradient-shadow contact-sidebar-trigger" href="#modal1">
+                                                        <i class="material-icons">edit</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--  Contact sidebar -->
+                                <div class="contact-compose-sidebar ps">
+                                    <div class="card quill-wrapper">
+                                        <div class="card-content pt-0">
+                                            <div class="card-header display-flex pb-2">
+                                                <h3 class="card-title contact-title-label">Edit Profile</h3>
+                                                <h7 class="card-title contact-title-label">Please Fill in all</h7>
+                                                <div class="close close-icon">
+                                                    <i class="material-icons">close</i>
+                                                </div>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <!-- form start -->
+                                            <form class="edit-contact-item mb-5 mt-5" method="POST" action="#" enctype="multipart/form-data">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">person_add</i>
+                                                        <input id="first_input3" type="text"  name="c_Name">
+                                                        <label for="first_input3" >Company Name</label>
+                                                    </div>
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">email</i>
+                                                        <input id="c_Email" type="email" name="c_Email">
+                                                        <label for="c_Email"  >E-Mail *</label>
+                                                    </div>
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">place</i>
+                                                        <input id="c_Address" type="text" name="c_Address">
+                                                        <label for="c_Address" >Address *</label>
+                                                    </div>
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">work</i>
+                                                        <input  type="text" maxlength="9" size="9" id="c_Nssf" name="c_Nssf" >
+                                                        <label for="c_Nssf" >Company NSSF Number</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">assessment</i>
+                                                        <input type="text" maxlength="10" size="10" name="c_Tin" id="c_Tin"  >
+                                                        <label for="c_Tin" >Company Tin *</label>
+                                                    </div>
+                                                    <div class="input-field col s12">
+                                                        <i class="material-icons prefix">phone</i>
+                                                          <label for="c_tel" data-error="wrong" data-success="right" >Telephone *</label><br>
+                                                        <input  id="c_Tel"  name="c_Tel"   type="number">
+
+                                                    </div>
+                                                    <div class="input-field col s12">
+                                                        <div class="file-field input-field">
+                                                            <div class="btn btn-light-blue">
+                                                                <span>Upload</span>
+                                                                <input type="file" name="Image" accept="image/*" id="c_logo" placeholder="logo*">
+                                                            </div>
+                                                            <div class="file-path-wrapper">
+                                                                <input class="file-path validate" type="text">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-action pl-0 pr-0 right-align">
+                                                <button class="btn-small waves-effect waves-light add-contact">
+                                                    <span>Update</span>
+                                                </button>
+                                            </div>
+                                            </form>
+                                            <!-- form start end-->
+                                        </div>
+                                    </div>
+                                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                                        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;">
+                                        </div>
+                                    </div>
+                                    <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                                    </div>
+                                    </div>
+                                <!-- START RIGHT SIDEBAR NAV -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
