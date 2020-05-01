@@ -9,7 +9,6 @@ Flask-Script==2.0.6
 Flask-SocketIO==4.2.1
 Flask-SQLAlchemy==2.3.2
 Flask-WTF==0.14.2
-flaskwebgui==0.0.7
 flatten-json==0.1.6
 gunicorn==19.9.0
 Jinja2==2.11.2
