@@ -90,7 +90,7 @@ def getConnection():
 class Data(Resource):
     def get(self):
         query = Item.query.all()
-        output = itemSchema.dump(query).data
+        output = itemSchema.dump(query)
         return jsonify({'items':output})
         
 #create api link for registering users
