@@ -22,7 +22,7 @@ jsonschema==3.0.0
 psycopg2==2.8.2
 
 webencodings==0.5.1
-Werkzeug==0.15.2
+Werkzeug==0.15.3
 
 WTForms==2.2.1
 
