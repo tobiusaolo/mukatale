@@ -1,12 +1,13 @@
-from flask import Flask, request,url_for,render_template,redirect,g
+from flask import Flask, request,url_for,render_template,redirect,g,jsonify
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 from json import dumps
 import base64
 import sqlite3
 import io
 from io import BytesIO
-from flask_jsonpify import jsonify
+# from flask_jsonpify import jsonify
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Date, Integer, String,LargeBinary
 
@@ -16,6 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///Mukatale.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 db  = SQLAlchemy(app)
+ma = Marshmallow(app)
 api = Api(app)
 #Create user table 
 class User(db.Model):
@@ -67,20 +69,30 @@ class Item(db.Model):
         self.title = title
         self.price = price
         self.description = description
-        self.image = image 
+        self.image = image
+    @property
+    def serialize(self):
+        return{"id":self.id,"title":self.title,"price":self.description,"image":self.image} 
+class ItemSchema(ma.Schema):
+    class Meta:
+        fields=("id","title","price","description")
+itemSchema = ItemSchema()
+itemSchema = ItemSchema(many=True)
+
 DATABASE="Mukatale.db" 
 def getConnection():
     con = getattr(g, '_database', None)
     if con is None:
         con = g._database = sqlite3.connect(DATABASE)
+        con.row_factory = sqlite3.Row
     return con 
 # create api to display items
 class Data(Resource):
     def get(self):
-        db = getConnection()
-        c = db.cursor()
-        query = c.execute("select * from item")
-        return {'items':[i[0] for i in query.fetchall()]}
+        query = Item.query.all()
+        output = itemSchema.dump(query).data
+        return jsonify({'items':output})
+        
 #create api link for registering users
 class Register(Resource):
     def post(self):
@@ -99,7 +111,9 @@ class Iorder(Resource):
         db = getConnection()
         c = db.cursor()
         query = c.execute("select * from orderz")
-        return {'orders':[i[0] for i in query.fetchall()]}
+        result = {'data': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
+        return jsonify(result)
+        # return {'orders':[i[0] for i in query.fetchall()]}
     def post(self):
         db = getConnection()
         c = db.cursor()
